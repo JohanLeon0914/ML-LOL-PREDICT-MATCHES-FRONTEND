@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "siteTitle": "LoL Match Predictor",
+    "siteDescription": "Professional League of Legends team match prediction app",
+    "homeTitle": "ML Match Predictor - LoL",
+    "homeDescription": "Professional interface to predict LoL match winners using CSV data and a remote model."
+  },
+  "footer": {
+    "role": "Junior ML Engineer & Full Stack Web Developer",
+    "builtBy": "Built by",
+    "rights": "All rights reserved.",
+    "portfolio": "Portfolio",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "linksAria": "Author links"
+  },
+  "nav": {
+    "brand": "LoL Predictor",
+    "tagline": "Sports UI",
+    "home": "Home",
+    "docs": "Documentation",
+    "language": "Language",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "predictor": {
+    "badge": "Match Predictor",
+    "title": "Predict the winner between two teams with an ML model",
+    "description": "Select teams, review their latest registered players, assign champions per player, and define bans for each side.",
+    "team1": "Team 1",
+    "team2": "Team 2",
+    "selectTeamLabel": "Select team",
+    "selectTeamPlaceholder": "Select a team",
+    "latestRoster": "Latest roster:",
+    "notAvailable": "Not available",
+    "sameTeamError": "You cannot select the same team on both sides.",
+    "player": "Player",
+    "pick": "Pick",
+    "selectPlayerPlaceholder": "Select player",
+    "champion": "Champion",
+    "selectChampionPlaceholder": "Select champion",
+    "bans": "Bans",
+    "bansTeam1": "Team 1 Bans",
+    "bansTeam2": "Team 2 Bans",
+    "banPlaceholder": "Ban {number}",
+    "predictionResult": "Prediction result",
+    "predictionHint": "When you click predict, we will send team, player, and ban data to the model API.",
+    "predictButton": "Predict winner",
+    "calculating": "Calculating...",
+    "predictionLabel": "Prediction",
+    "team1Wins": "Team 1 wins",
+    "team2Wins": "Team 2 wins",
+    "probability": "Probability:",
+    "thresholdUsed": "Threshold used:",
+    "predictionPlaceholder": "The prediction will appear here after querying the model.",
+    "errors": {
+      "selectBothTeams": "Select both teams to make a prediction.",
+      "selectDifferentTeams": "Select two different teams.",
+      "predictionFailed": "Could not retrieve the prediction.",
+      "invalidResponse": "Invalid prediction response.",
+      "apiError": "Error contacting the prediction API."
+    },
+    "positions": {
+      "top": "Top",
+      "jng": "Jungle",
+      "mid": "Mid",
+      "bot": "ADC",
+      "sup": "Support",
+      "empty": "-- {role} --"
+    }
+  }
+}

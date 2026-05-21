@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "siteTitle": "LoL Match Predictor",
+    "siteDescription": "Aplicación profesional de predicción de equipos de LoL",
+    "homeTitle": "ML Match Predictor - LoL",
+    "homeDescription": "Interfaz profesional para predecir ganadores entre equipos de LoL usando datos CSV y un modelo remoto."
+  },
+  "footer": {
+    "role": "Ingeniero ML Junior y Desarrollador Web Full Stack",
+    "builtBy": "Desarrollado por",
+    "rights": "Todos los derechos reservados.",
+    "portfolio": "Portafolio",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "linksAria": "Enlaces del autor"
+  },
+  "nav": {
+    "brand": "LoL Predictor",
+    "tagline": "Sports UI",
+    "home": "Inicio",
+    "docs": "Documentación",
+    "language": "Idioma",
+    "english": "English",
+    "spanish": "Español"
+  },
+  "predictor": {
+    "badge": "Match Predictor",
+    "title": "Predice el ganador entre dos equipos con ayuda de un modelo de ML",
+    "description": "Selecciona los equipos, revisa sus últimos jugadores registrados, asigna campeones por jugador y define los baneos de cada lado.",
+    "team1": "Equipo 1",
+    "team2": "Equipo 2",
+    "selectTeamLabel": "Selecciona equipo",
+    "selectTeamPlaceholder": "Selecciona un equipo",
+    "latestRoster": "Último roster:",
+    "notAvailable": "No disponible",
+    "sameTeamError": "No puedes seleccionar el mismo equipo en ambos lados.",
+    "player": "Jugador",
+    "pick": "Pick",
+    "selectPlayerPlaceholder": "Selecciona jugador",
+    "champion": "Campeón",
+    "selectChampionPlaceholder": "Selecciona campeón",
+    "bans": "Baneos",
+    "bansTeam1": "Baneos Equipo 1",
+    "bansTeam2": "Baneos Equipo 2",
+    "banPlaceholder": "Baneo {number}",
+    "predictionResult": "Resultado de la predicción",
+    "predictionHint": "Cuando hagas clic en predecir, enviaremos los datos de equipos, jugadores y baneos a la API del modelo.",
+    "predictButton": "Predecir ganador",
+    "calculating": "Calculando...",
+    "predictionLabel": "Predicción",
+    "team1Wins": "Gana Equipo 1",
+    "team2Wins": "Gana Equipo 2",
+    "probability": "Probabilidad:",
+    "thresholdUsed": "Threshold usado:",
+    "predictionPlaceholder": "La predicción se mostrará aquí después de consultar el modelo.",
+    "errors": {
+      "selectBothTeams": "Selecciona los dos equipos para hacer la predicción.",
+      "selectDifferentTeams": "Selecciona dos equipos diferentes.",
+      "predictionFailed": "No se pudo obtener la predicción.",
+      "invalidResponse": "Respuesta de predicción no válida.",
+      "apiError": "Error al contactar la API de predicción."
+    },
+    "positions": {
+      "top": "Top",
+      "jng": "Jungla",
+      "mid": "Mid",
+      "bot": "ADC",
+      "sup": "Soporte",
+      "empty": "-- {role} --"
+    }
+  }
+}

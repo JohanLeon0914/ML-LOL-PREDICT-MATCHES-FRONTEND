@@ -1,0 +1,196 @@
+{
+  "meta": {
+    "title": "Documentation - LoL Neural Network",
+    "description": "Complete technical documentation for the competitive League of Legends match prediction model."
+  },
+  "toc": {
+    "title": "Table of Contents",
+    "description": "Complete technical documentation for the competitive League of Legends match prediction system.",
+    "ariaLabel": "Documentation table of contents"
+  },
+  "sectionsNav": {
+    "overview": "1. Introduction",
+    "objective": "2. Project Objective",
+    "dataset": "3. Dataset",
+    "pipeline": "4. Data Pipeline",
+    "leakage": "5. Data Leakage Prevention",
+    "features": "6. Feature Engineering",
+    "architecture": "7. Model Architecture",
+    "embeddings": "8. Champion Embeddings",
+    "roles": "9. Role Encoders",
+    "interactions": "10. Pairwise Interactions",
+    "numeric": "11. Numeric Branch",
+    "gate": "12. Dynamic Gating",
+    "training": "13. Training",
+    "regularization": "14. Regularization",
+    "results": "15. Results",
+    "deployment": "16. Deployment & API",
+    "frontend": "17. Web Frontend",
+    "future": "18. Future Improvements",
+    "conclusion": "19. Conclusion"
+  },
+  "hero": {
+    "badge": "Machine Learning • PyTorch • Esports Analytics",
+    "title": "Neural Network for Competitive League of Legends Match Prediction",
+    "description": "End-to-end machine learning system built with PyTorch to predict professional League of Legends match outcomes using champion embeddings, historical stats, matchups, synergies, and a hybrid architecture with dynamic gating.",
+    "bestBaseline": "Best Baseline"
+  },
+  "overview": {
+    "p1": "This project is a machine learning system designed to predict outcomes of professional competitive League of Legends matches using historical esports data from 2023 to 2026.",
+    "p2": "The model's main goal is to learn complex patterns related to competitive drafts, champion matchups, historical player and team performance, pick synergies, and recent metagame trends.",
+    "p3": "The system was built with PyTorch and a dual hybrid architecture that combines trainable champion embeddings with a numeric branch of advanced historical statistics."
+  },
+  "objective": {
+    "p1": "This project's goal was not only to train a model with good accuracy, but to build a complete competitive prediction system capable of:",
+    "items": [
+      "Predicting professional match outcomes.",
+      "Handling newly released champions.",
+      "Avoiding temporal data leakage.",
+      "Generalizing across patches and metas.",
+      "Deploying inference in production via API.",
+      "Consuming the model from a modern web interface."
+    ]
+  },
+  "dataset": {
+    "p1": "The dataset comes from professional matches across multiple international competitive leagues.",
+    "leaguesTitle": "Leagues Used",
+    "featuresTitle": "Base Features",
+    "features": [
+      "Picks",
+      "Bans",
+      "Players",
+      "Teams",
+      "Result",
+      "Date",
+      "First Pick",
+      "Historical winrates"
+    ]
+  },
+  "pipeline": {
+    "p1": "The processing pipeline was designed to simulate a real temporal prediction environment.",
+    "flow": "Raw Matches → Cleaning → Feature Engineering → Scaling → Encoding → Tensors → Neural Network",
+    "p2": "All data was sorted chronologically before generating historical statistics to avoid future contamination."
+  },
+  "leakage": {
+    "p1": "One of the most important issues in sports models is temporal data leakage.",
+    "p2": "To prevent it, all historical statistics were computed using only information prior to each match.",
+    "solvedTitle": "ML Problems Solved",
+    "solved": [
+      "Temporal Data Leakage",
+      "OOD Champions",
+      "Sparse Embeddings",
+      "Dynamic Feature Weighting",
+      "Time-aware Splits",
+      "Overfitting"
+    ]
+  },
+  "features": {
+    "p1": "Feature engineering is one of the most important components of the project.",
+    "historicalTitle": "Historical Features",
+    "strategicTitle": "Strategic Features",
+    "historical": [
+      "Player Winrate",
+      "Player Recent Winrate",
+      "Champion Winrate",
+      "Team Winrate",
+      "Team Recent Form"
+    ],
+    "strategic": [
+      "Role matchups",
+      "Synergies",
+      "Role Synergies",
+      "Head-to-Head",
+      "First Pick Advantage"
+    ]
+  },
+  "architecture": {
+    "p1": "The model uses a dual hybrid architecture composed of:",
+    "items": [
+      "Champion embedding branch.",
+      "Numeric branch of historical statistics.",
+      "Dynamic gating mechanism.",
+      "Fully connected prediction head."
+    ]
+  },
+  "embeddings": {
+    "p1": "Each champion is represented by a trainable embedding of dimension 16.",
+    "p2": "Embeddings let the model learn semantic relationships between similar champions and capture complex competitive metagame patterns."
+  },
+  "roles": {
+    "p1": "For each competitive role, the model generates individual representations using the difference between opposing embeddings.",
+    "p2": "This models relative advantages between specific picks within each competitive lane."
+  },
+  "interactions": {
+    "p1": "El modelo calcula interacciones pairwise entre roles para capturar sinergias complejas entre composiciones.",
+    "p2": "Esto permite aprender relaciones como:",
+    "items": [
+      "Mid + Jungle synergy",
+      "Bot + Support coordination",
+      "Frontline + Backline balance"
+    ]
+  },
+  "numeric": {
+    "p1": "The numeric branch processes scaled historical statistics using StandardScaler.",
+    "p2": "This branch is especially important for handling new champions or rare picks that rarely appear during training."
+  },
+  "gate": {
+    "p1": "The gate was designed to address new champions and sparse data.",
+    "p2": "The mechanism dynamically learns how much to trust embeddings versus numeric statistics depending on match context."
+  },
+  "training": {
+    "p1": "The model was trained using BCEWithLogitsLoss and the Adam optimizer."
+  },
+  "regularization": {
+    "p1": "Multiple regularization techniques were applied to improve generalization and reduce overfitting.",
+    "items": [
+      "Aggressive dropout on embeddings.",
+      "LayerNorm in multiple blocks.",
+      "Weight Decay.",
+      "Early Stopping.",
+      "Learning Rate Scheduling."
+    ]
+  },
+  "results": {
+    "p1": "The model significantly outperforms all traditional winrate-only baselines.",
+    "modelCol": "Model",
+    "accuracyCol": "Accuracy",
+    "baselineRow": "Baseline WR",
+    "nnRow": "Neural Network"
+  },
+  "deployment": {
+    "p1": "The model was exported and deployed via an API for real-time inference.",
+    "items": [
+      "PyTorch Model Serialization",
+      "REST API",
+      "Model Metadata",
+      "Historical Stats Persistence",
+      "Cloud Deployment"
+    ]
+  },
+  "frontend": {
+    "p1": "The project also includes a modern web interface to consume the model API.",
+    "p2": "The frontend allows:",
+    "items": [
+      "Selecting competitive drafts.",
+      "Viewing win probabilities.",
+      "Real-time inference.",
+      "Displaying metrics and statistics.",
+      "Presenting technical documentation."
+    ]
+  },
+  "future": {
+    "items": [
+      "Calibrated predictions.",
+      "SHAP / Explainability.",
+      "Live Draft Prediction.",
+      "Patch-aware Training.",
+      "Transformers / GNNs.",
+      "MLflow Tracking."
+    ]
+  },
+  "conclusion": {
+    "p1": "This project implements a complete end-to-end machine learning system for competitive League of Legends match prediction.",
+    "p2": "The combination of advanced feature engineering, embeddings, role interactions, and dynamic gating captures complex competitive metagame patterns and far exceeds traditional baseline models.",
+    "p3": "Beyond the model itself, the project also covers deployment, APIs, and a web frontend, making it a production-oriented complete ML system."
+  }
+}

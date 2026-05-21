@@ -24,3 +24,36 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.docs-toc-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 211, 238, 0.5) rgba(15, 23, 42, 0.5);
+}
+
+.docs-toc-scrollbar::-webkit-scrollbar {
+  width: 7px;
+}
+
+.docs-toc-scrollbar::-webkit-scrollbar-track {
+  margin: 6px 0;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.65);
+}
+
+.docs-toc-scrollbar::-webkit-scrollbar-thumb {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 9999px;
+  background: linear-gradient(
+    180deg,
+    rgba(34, 211, 238, 0.55) 0%,
+    rgba(139, 92, 246, 0.45) 100%
+  );
+}
+
+.docs-toc-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(34, 211, 238, 0.85) 0%,
+    rgba(139, 92, 246, 0.7) 100%
+  );
+}

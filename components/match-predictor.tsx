@@ -269,11 +269,7 @@ export default function MatchPredictor({
         <div className="pointer-events-none absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-fuchsia-500/50 to-transparent" />
 
         <div className="mb-8 flex items-center gap-4 border-b border-white/5 pb-6">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-fuchsia-600/30 to-violet-600/20 ring-1 ring-fuchsia-500/30">
-            <span className="text-lg" aria-hidden>
-              ⚡
-            </span>
-          </div>
+          
           <div>
             <h2 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
               {t("formTitle")}

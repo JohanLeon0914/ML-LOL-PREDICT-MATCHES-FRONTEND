@@ -14,6 +14,18 @@
     "linkedin": "LinkedIn",
     "linksAria": "Author links"
   },
+  "home": {
+    "badge": "Competitive LOL 2026",
+    "title": "Predict the winning team",
+    "titleHighlight": "ML Competitive LOL",
+    "description": "Select teams, review recent rosters, assign champions and bans — the ML model does the rest.",
+    "imageAlt": "League of Legends Worlds 2026 in Texas and New York",
+    "features": {
+      "teams": "Pro teams",
+      "rosters": "Updated rosters",
+      "model": "ML prediction"
+    }
+  },
   "nav": {
     "brand": "LoL Predictor",
     "tagline": "Sports UI",
@@ -24,6 +36,8 @@
     "spanish": "Spanish"
   },
   "predictor": {
+    "formTitle": "Set up the match",
+    "formSubtitle": "Teams, players, picks and bans",
     "badge": "Match Predictor",
     "title": "Predict the winner between two teams with an ML model",
     "description": "Select teams, review their latest registered players, assign champions per player, and define bans for each side.",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import HomeHero from "@/components/home-hero";
 import MatchPredictor from "@/components/match-predictor";
 import { getInitialMatchData } from "@/lib/match-data";
 import { routing } from "@/i18n/routing";
@@ -30,8 +31,15 @@ export default async function Home({ params }: Props) {
     await getInitialMatchData();
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.18),_transparent_45%),radial-gradient(circle_at_bottom_right,_rgba(236,72,153,0.14),_transparent_35%),linear-gradient(180deg,_#050816_0%,_#101828_100%)] text-white">
-      <div className="mx-auto max-w-7xl px-6 py-10 lg:px-12">
+    <main className="relative min-h-screen overflow-hidden bg-slate-950 text-white">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(139,92,246,0.15),transparent),radial-gradient(ellipse_60%_40%_at_100%_100%,rgba(236,72,153,0.08),transparent)]"
+        aria-hidden
+      />
+
+      <HomeHero />
+
+      <div className="relative mx-auto max-w-7xl px-6 pb-16 lg:px-12">
         <MatchPredictor
           teamOptions={teamOptions}
           championOptions={championOptions}

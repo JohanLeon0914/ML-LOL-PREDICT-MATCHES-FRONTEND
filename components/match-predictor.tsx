@@ -264,19 +264,21 @@ export default function MatchPredictor({
   };
 
   return (
-    <section className="mx-auto w-full max-w-7xl px-6 py-10 lg:px-12">
-      <div className="rounded-4xl border border-white/10 bg-zinc-950/80 p-8 shadow-2xl shadow-black/20 backdrop-blur-xl text-white">
-        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="space-y-3">
-            <span className="inline-flex rounded-full bg-fuchsia-600/20 px-4 py-1 text-sm font-semibold uppercase tracking-[0.24em] text-fuchsia-300">
-              {t("badge")}
+    <section className="w-full -mt-6">
+      <div className="relative rounded-4xl border border-white/10 bg-zinc-950/70 p-6 shadow-2xl shadow-black/30 backdrop-blur-xl sm:p-8">
+        <div className="pointer-events-none absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-fuchsia-500/50 to-transparent" />
+
+        <div className="mb-8 flex items-center gap-4 border-b border-white/5 pb-6">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-fuchsia-600/30 to-violet-600/20 ring-1 ring-fuchsia-500/30">
+            <span className="text-lg" aria-hidden>
+              ⚡
             </span>
-            <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              {t("title")}
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
+              {t("formTitle")}
             </h2>
-            <p className="max-w-2xl text-sm leading-6 text-zinc-300 sm:text-base">
-              {t("description")}
-            </p>
+            <p className="mt-0.5 text-sm text-zinc-400">{t("formSubtitle")}</p>
           </div>
         </div>
 
@@ -287,7 +289,7 @@ export default function MatchPredictor({
                 const selected = team === 1 ? team1Id : team2Id;
                 const teamLabel = team === 1 ? t("team1") : t("team2");
                 return (
-                  <div key={team} className="rounded-3xl border border-white/10 bg-zinc-900/70 p-6 shadow-xl shadow-black/20">
+                  <div key={team} className="group rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 p-6 shadow-xl shadow-black/20 transition hover:border-fuchsia-500/20 hover:shadow-fuchsia-500/5">
                     <h3 className="mb-4 text-xl font-semibold text-white">{teamLabel}</h3>
                     <label className="block text-sm uppercase tracking-[0.12em] text-zinc-400">{t("selectTeamLabel")}</label>
                     <div className="mt-3">
@@ -327,12 +329,12 @@ export default function MatchPredictor({
 
             <div className="grid gap-6 md:grid-cols-2">
               {[{ label: t("team1"), players: team1Players, bans: team1Bans, setBan: (index:number, value:string) => handleBanChange(1,index,value) }, { label: t("team2"), players: team2Players, bans: team2Bans, setBan: (index:number, value:string) => handleBanChange(2,index,value) }].map((side, sideIndex) => (
-                <div key={sideIndex} className="rounded-4xl border border-white/10 bg-zinc-900/70 p-6 shadow-xl shadow-black/20">
+                <div key={sideIndex} className="rounded-4xl border border-white/10 bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 p-6 shadow-xl shadow-black/20">
                   <h3 className="mb-4 text-xl font-semibold text-white">{side.label}</h3>
 
                   <div className="space-y-4">
                     {side.players.map((player, index) => (
-                      <div key={`${player.position}-${index}`} className="rounded-3xl bg-zinc-950/90 p-4 ring-1 ring-white/10">
+                      <div key={`${player.position}-${index}`} className="rounded-3xl bg-zinc-950/90 p-4 ring-1 ring-white/10 transition hover:ring-fuchsia-500/20">
                         <div className="mb-3 flex items-center justify-between gap-4">
                           <div>
                             <p className="text-sm uppercase tracking-[0.14em] text-fuchsia-300">{positionLabels[player.position as keyof typeof positionLabels] ?? player.position}</p>
@@ -385,7 +387,7 @@ export default function MatchPredictor({
           </div>
 
           <div className="space-y-6">
-            <div className="rounded-4xl border border-white/10 bg-zinc-900/70 p-6 shadow-xl shadow-black/20">
+            <div className="rounded-4xl border border-white/10 bg-gradient-to-br from-zinc-900/80 to-zinc-950/80 p-6 shadow-xl shadow-black/20">
               <h3 className="mb-4 text-xl font-semibold text-white">{t("bans")}</h3>
               <div className="grid gap-4">
                 {[{ label: t("bansTeam1"), bans: team1Bans, setBan: (index:number, value:string) => handleBanChange(1,index,value) }, { label: t("bansTeam2"), bans: team2Bans, setBan: (index:number, value:string) => handleBanChange(2,index,value) }].map((block, blockIndex) => (
@@ -413,8 +415,9 @@ export default function MatchPredictor({
               </div>
             </div>
 
-            <div className="rounded-4xl border border-fuchsia-500/20 bg-gradient-to-br from-fuchsia-950/80 via-black/50 to-slate-950/80 p-6 shadow-2xl shadow-fuchsia-500/10">
-              <h3 className="text-xl font-semibold text-white">{t("predictionResult")}</h3>
+            <div className="relative overflow-hidden rounded-4xl border border-fuchsia-500/25 bg-gradient-to-br from-fuchsia-950/90 via-violet-950/50 to-slate-950/90 p-6 shadow-2xl shadow-fuchsia-500/15">
+              <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-fuchsia-500/10 blur-2xl" aria-hidden />
+              <h3 className="relative text-xl font-semibold text-white">{t("predictionResult")}</h3>
               <p className="mt-3 text-sm leading-6 text-zinc-300">{t("predictionHint")}</p>
 
               <div className="mt-6 space-y-4">
@@ -422,7 +425,7 @@ export default function MatchPredictor({
                   type="button"
                   onClick={handlePredict}
                   disabled={loading}
-                  className="inline-flex min-h-[3rem] cursor-pointer w-full items-center justify-center rounded-full bg-fuchsia-500 px-6 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-black transition hover:bg-fuchsia-400 disabled:cursor-not-allowed disabled:opacity-60"
+                  className="inline-flex min-h-[3rem] w-full cursor-pointer items-center justify-center rounded-full bg-gradient-to-r from-fuchsia-500 to-violet-500 px-6 py-3 text-sm font-semibold uppercase tracking-[0.15em] text-white shadow-lg shadow-fuchsia-500/25 transition hover:from-fuchsia-400 hover:to-violet-400 hover:shadow-fuchsia-500/40 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {loading ? t("calculating") : t("predictButton")}
                 </button>
